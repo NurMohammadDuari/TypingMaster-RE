@@ -1,0 +1,13 @@
+# Commit message template
+# Activated with:  git config commit.template .gitmessage
+
+# <type>: <short summary, imperative, <= 72 chars>
+#
+# Types: analysis | docs | ci | chore | fix | feat | integrity
+#
+# ── Body (why, not what) ─────────────────────────────────────
+# Explain the reasoning and any evidence (file + offset, function, resource).
+
+# ── Footer ───────────────────────────────────────────────────
+# Author must remain: NurMohammadDuari <NurMohammadDuari@users.noreply.github.com>
+# If a MANIFEST.txt entry changed, say so here.

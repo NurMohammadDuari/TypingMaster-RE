@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security issue (private)
+    url: https://github.com/NurMohammadDuari/TypingMaster-RE/security/advisories/new
+    about: Report a security problem privately. Do not open a public issue.
+  - name: Read the documentation first
+    url: https://github.com/NurMohammadDuari/TypingMaster-RE/blob/main/DOCUMENTATION.md
+    about: Most questions about what this tree is and how to run it are answered here.
+  - name: Legal boundary
+    url: https://github.com/NurMohammadDuari/TypingMaster-RE/blob/main/NOTICE.md
+    about: Proprietary components, attribution, and what must not be redistributed.

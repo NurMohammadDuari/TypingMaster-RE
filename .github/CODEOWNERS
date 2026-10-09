@@ -1,0 +1,12 @@
+# Repo ownership — every path is owned by the maintainer.
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+*       @NurMohammadDuari
+
+# Analysis and documentation are the highest-value content here.
+/analysis/           @NurMohammadDuari
+/DOCUMENTATION.md    @NurMohammadDuari
+/README.md           @NurMohammadDuari
+/LICENSE             @NurMohammadDuari
+/NOTICE.md           @NurMohammadDuari
+/MANIFEST.txt        @NurMohammadDuari

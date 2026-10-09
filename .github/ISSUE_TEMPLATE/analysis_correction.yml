@@ -1,0 +1,64 @@
+name: Analysis correction
+description: Correct or extend the technical analysis with cited evidence
+title: "[Analysis]: "
+labels: ["analysis", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this to correct or extend the reverse-engineering analysis.
+        Every claim must cite evidence from this repository (file + offset,
+        function address, resource id, or byte range).
+
+  - type: dropdown
+    id: document
+    attributes:
+      label: Document / area
+      options:
+        - analysis/ANALYSIS-DEEP.md
+        - analysis/classes.txt
+        - analysis/handlers.txt
+        - DOCUMENTATION.md
+        - README.md
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What is currently stated
+      placeholder: Quote the existing statement, with its location.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: What it should say
+      placeholder: State the correction and the reasoning.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: >
+        Cite concrete artifacts. Remember file-relative vs live addresses
+        (live = file offset + 0x401000).
+      placeholder: |
+        e.g. native-re/decompiled_typingmaster.c, FUN_0049196c
+             resources/TypingMaster.exe_10_TSTATISTICSSTG_0
+             app/lessons/*.kbd offset 0x00
+      render: text
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: This is a factual correction, not a licence-bypass request.
+          required: true

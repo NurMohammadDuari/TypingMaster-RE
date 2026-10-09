@@ -1,0 +1,43 @@
+# EditorConfig — https://editorconfig.org
+# Keeps whitespace consistent across editors and OSes.
+#
+# Reminder: this tree must stay byte-identical (MANIFEST.txt hashes), so
+# .gitattributes also forces "no line-ending conversion".
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{c,h}]
+indent_size = 4
+
+[Makefile]
+indent_style = tab
+
+[*.{yml,yaml}]
+indent_size = 2
+
+[*.sh]
+indent_size = 2
+
+# Never touch anything below — binary/vendored content.
+[{*.exe,*.dll,*.bin,*.gif,*.bmp,*.ico,*.cur,*.wav,*.so,*.so.*}]
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+[runtime/**]
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+[prefix/**]
+insert_final_newline = false
+trim_trailing_whitespace = false

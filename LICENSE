@@ -1,0 +1,42 @@
+# License
+
+## This repository: All Rights Reserved
+
+Copyright © 2026 Nur Mohammad Duari.
+
+The **analysis and documentation** in this repository are original work.
+No license — express or implied — is granted to any party to copy, modify,
+distribute, sublicense, sell, or otherwise use this work without written
+permission from the author.
+
+If you would like to reuse this material, open an issue to ask.
+
+## What is NOT in this repository
+
+This repository deliberately contains **no** third-party proprietary software.
+It is a study *about* TypingMaster 12.0.1.981; it does not include or
+redistribute it. Specifically, the following are **absent** here:
+
+- the TypingMaster program, lessons, sounds, images, manuals, wordlists
+- the Wine runtime used to run it
+- extracted PE resources from the executable
+- the live-memory dump and the decompilation derived from it
+
+Those materials belong to their respective rights holders. See `NOTICE.md`.
+
+## Licensing of the studied software
+
+**TypingMaster 12.0.1.981** is a commercial, proprietary product of its
+vendor. This repository does not grant any rights to it, and no attempt is
+made here to circumvent its licensing.
+
+## Third-party references
+
+Where this repository refers to third-party projects (for example Wine,
+Ghidra, rizin), those names and any quoted interfaces remain the property of
+their owners. No third-party code is bundled here.
+
+## Contributing
+
+By submitting a contribution you agree it may be distributed under the terms
+above. See `CONTRIBUTING.md`.

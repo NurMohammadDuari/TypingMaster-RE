@@ -1,0 +1,35 @@
+# Labeler rules — see .github/workflows/labeler.yml
+# Applies labels to pull requests based on changed paths.
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.md'
+          - 'analysis/**'
+          - 'docs/**'
+
+analysis:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'analysis/**'
+
+integrity:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'MANIFEST.txt'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+
+governance:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'LICENSE'
+          - 'NOTICE.md'
+          - 'CONTRIBUTING.md'
+          - 'CODE_OF_CONDUCT.md'
+          - 'SECURITY.md'
+          - 'MAINTAINERS.md'
+          - 'AUTHORS.md'

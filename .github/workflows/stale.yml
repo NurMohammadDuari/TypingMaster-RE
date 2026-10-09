@@ -1,0 +1,39 @@
+name: Stale
+
+# Marks inactive issues/PRs and closes them after a grace period.
+# Conservative settings — this is a low-traffic research repository.
+
+on:
+  schedule:
+    - cron: "0 3 * * 0"   # Sundays 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/stale@v11
+        with:
+          days-before-stale: 90
+          days-before-close: 30
+          days-before-pr-stale: 60
+          days-before-pr-close: 30
+          stale-issue-label: "stale"
+          stale-pr-label: "stale"
+          exempt-issue-labels: "pinned,security,bug"
+          exempt-pr-labels: "pinned,security"
+          remove-stale-when-updated: true
+          stale-issue-message: >
+            This issue has been inactive for 90 days. It will be closed in 30
+            days unless there is new activity. Add the `pinned` label to keep
+            it open.
+          stale-pr-message: >
+            This pull request has been inactive for 60 days and will be closed
+            in 30 days unless there is new activity.
+          close-issue-message: "Closing as inactive. Reopen if it becomes relevant again."
+          close-pr-message: "Closing as inactive. Reopen if it becomes relevant again."

@@ -1,0 +1,56 @@
+# Never rewrite line endings anywhere in this tree.
+#
+# Reasons:
+#  - MANIFEST.txt holds MD5 hashes of the original files; any CRLF/LF
+#    conversion would silently invalidate every entry.
+#  - The tree contains Windows binaries, PE resources, DFM forms, MIDI/WAV
+#    assets and Wine system libraries that must stay byte-identical.
+# Default: never touch line endings, but keep files diffable as text.
+* -text
+
+# Explicitly declare the common binary types so git never guesses.
+*.exe    binary
+*.dll    binary
+*.msi    binary
+*.bin    binary
+*.gif    binary
+*.png    binary
+*.jpg    binary
+*.bmp    binary
+*.ico    binary
+*.cur    binary
+*.ani    binary
+*.wav    binary
+*.snd    binary
+*.ttf    binary
+*.otf    binary
+*.so     binary
+*.so.*   binary
+*.dat    binary
+*.mgc    binary
+*.pack   binary
+*.idx    binary
+*.pdb    binary
+*.ocx    binary
+*.tlb    binary
+*.dylib  binary
+*.zip    binary
+*.gz     binary
+*.xz     binary
+*.bz2    binary
+*.mo     binary
+*.qm     binary
+
+# Scripts must keep LF and their executable bit.
+*.sh     text eol=lf
+
+# ── GitHub Linguist: keep language stats honest ───────────────
+*.md                  linguist-documentation
+*.kbd                 linguist-language=Text
+*.exi                 linguist-language=Text
+*.exm                 linguist-language=Text
+*.cnt                 linguist-language=Text
+*.wzd                 linguist-language=Text
+*.hdr                 linguist-language=Text
+*.c                   linguist-language=C
+

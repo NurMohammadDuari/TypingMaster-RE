@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you reference this reverse-engineering study, please cite it as below."
+title: "TypingMaster 12.0.1.981 — Reverse-Engineering Analysis"
+abstract: >-
+  A documented reverse-engineering study of TypingMaster 12.0.1.981, a 32-bit
+  Windows / Delphi VCL touch-typing tutor. The study covers the custom packer,
+  a dynamically-captured decrypted image, a Ghidra decompilation of 13,137
+  functions, RTTI-derived class and event-handler maps, PE resource cataloguing
+  and application file formats. It contains the analysis and documentation
+  only: the proprietary program, its assets, the runtime and the decompilation
+  are not redistributed. Licensing logic is documented structurally only; no
+  bypass is provided.
+type: software
+authors:
+  - family-names: "Duari"
+    given-names: "Nur Mohammad"
+    alias: "NurMohammadDuari"
+    website: "https://github.com/NurMohammadDuari"
+repository-code: "https://github.com/NurMohammadDuari/TypingMaster-RE"
+url: "https://github.com/NurMohammadDuari/TypingMaster-RE"
+license: "LicenseRef-Proprietary"
+license-url: "https://github.com/NurMohammadDuari/TypingMaster-RE/blob/main/LICENSE"
+version: "1.0.0"
+date-released: "2026-10-09"
+keywords:
+  - reverse-engineering
+  - typingmaster
+  - delphi
+  - vcl
+  - wine
+  - packer
+  - ghidra
+  - pe32
+  - unpacking

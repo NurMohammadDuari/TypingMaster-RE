@@ -1,0 +1,86 @@
+name: Bug report
+description: Report a problem with the scripts, launcher, or documentation
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. **Do not** use this template for security issues
+        (see `SECURITY.md`) or for licence-bypass requests (declined).
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the problem.
+      placeholder: Describe the behaviour you observed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: Describe what you expected to happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - analysis/ (maps, deep report)
+        - documentation (README, DOCUMENTATION.md, …)
+        - repository tooling / CI (.github, MANIFEST.txt)
+        - other
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: e.g. Linux Mint 22, x86_64
+    validations:
+      required: true
+
+  - type: textarea
+    id: integrity
+    attributes:
+      label: Integrity check output
+      description: >
+        Paste the result of `md5sum -c MANIFEST.txt` (or state that it passes).
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output / logs
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have not included any licence keys, IDs, or personal data.
+          required: true
+        - label: This is not a security issue and not a licence-bypass request.
+          required: true

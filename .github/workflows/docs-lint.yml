@@ -1,0 +1,58 @@
+name: Docs lint
+
+# Light validation of Markdown and repository metadata.
+# Non-fatal for content style; fails only on broken structure we care about.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/*.md'
+      - 'CITATION.cff'
+      - '.github/workflows/docs-lint.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**/*.md'
+      - 'CITATION.cff'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  markdownlint:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run markdownlint-cli2
+        uses: DavidAnson/markdownlint-cli2-action@v24
+        with:
+          globs: |
+            *.md
+            analysis/*.md
+            .github/*.md
+        continue-on-error: true
+
+  citation:
+    name: CITATION.cff valid
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: CITATION.cff
+          sparse-checkout-cone-mode: false
+      - name: Validate CITATION.cff
+        run: |
+          python3 - <<'PY'
+          import sys, yaml
+          with open("CITATION.cff") as fh:
+              d = yaml.safe_load(fh)
+          assert d.get("cff-version"), "missing cff-version"
+          assert d.get("title"), "missing title"
+          assert d.get("authors"), "missing authors"
+          print("CITATION.cff OK:", d["title"])
+          PY
